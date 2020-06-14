@@ -1,2 +1,2 @@
 # LeetCodeProblems
-Resolved LeetCode problems
+Resolved LeetCode problems in python3
