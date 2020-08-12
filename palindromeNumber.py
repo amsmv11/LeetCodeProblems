@@ -1,7 +1,8 @@
-def isPalindrome(x):
-    str = str(x)
-    i = 0
-    for i in range(len(str)//2):
-        if str[i] != str[-i-1]:
-            return False
-    return True
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        string = str(x)
+        i = 0
+        for i in range(len(string)//2):
+            if string[i] != string[-i-1]:
+                return False
+        return True
