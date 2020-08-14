@@ -8,11 +8,16 @@ def isMatchAux(s, p, lsc, asterisc):
     if s != "" and p == "":
         return False
     if s == "" and p != "":
-        if asterisc == 1:    
-            if p[0] == lsc:
+        if asterisc == 1:
+            if len(p) == 1:
+                if p[0] == lsc:
+                    return isMatchAux(s, p[1:], "", 0)
+                if p[0] != lsc:
+                    return False  
+            if p[0] == lsc and 1 < len(p) and p[1] != "*":  #falta verificar se o proximo nao e um asterisco
                 return isMatchAux(s, p[1:], "", 0)
-        else:    
-            return False
+            if p[1] == "*":
+                return isMatchAux(s, p[2:], lsc, 1) 
     
 
     else:
@@ -43,6 +48,8 @@ def isMatch(s, p):
     return isMatchAux(s, p, "", 0)
     
     
+
+print(isMatch("aaa", "a*a"))
     
     
                 
